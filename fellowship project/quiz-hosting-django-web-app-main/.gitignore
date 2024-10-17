@@ -1,0 +1,9 @@
+quiz_hosting_web_app/password.py
+db.sqlite3
+host_authentication_system/__pycache__/
+host_authentication_system/migrations/__pycache__/
+quiz_attempter_management/__pycache__/
+quiz_attempter_management/migrations/__pycache__/
+quiz_hosting_web_app/__pycache__/
+quiz_management/__pycache__/
+quiz_management/migrations/__pycache__/

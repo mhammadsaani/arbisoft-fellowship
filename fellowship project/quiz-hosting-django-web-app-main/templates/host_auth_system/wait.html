@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Wait</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Please Wait</h1>
+                    <p class="card-text text-center">Currently, login access is restricted. Our administrators will verify your host status shortly.</p>
+                    <div class="text-center mt-4">
+                        <a href="{% url "homepage" %}" class="btn btn-primary">Go to Homepage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

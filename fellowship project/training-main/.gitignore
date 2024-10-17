@@ -1,0 +1,17 @@
+/weatherman/weatherdata
+/weatherman/temp.py
+/weatherman/details.txt
+weatherman
+/weatherman/__pycache__/
+/scrapping_tasks/educative/scrapy.cfg
+/scrapping_tasks/educative/test.json
+/scrapping_tasks/educative/test_again.json
+/scrapping_tasks/educative/educative/__pycache__/
+/scrapping_tasks/educative/educative/spiders/test.py
+/scrapping_tasks/codedamn_courses_scraper/scrapy.cfg
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/__init__.py
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/__pycache__
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/spiders/codedamn_test.py
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/spiders/__pycache__/
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/spiders/test.py
+/scrapping_tasks/codedamn_courses_scraper/codedamn_courses_scraper/spiders/credentials.py

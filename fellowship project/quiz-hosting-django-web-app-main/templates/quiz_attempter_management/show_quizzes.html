@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Quizzes</title>
+    <head>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #f5f5f5;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .actions {
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+{% endblock title %}
+
+{% block nav_elements %}
+    <a href="{% url "profile" %}">Profile</a>
+    <a href="{% url "logout" %}">Logout</a>
+{% endblock nav_elements %}
+
+{% block content %}
+<h3>Available Quizzes </h3>
+{% if available_quizzes %}
+    <table>
+        <thead>
+            <tr>
+                <th>Quiz Title</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Announcement</th>
+                <th class="actions">Actions</th>
+                <th>Discussion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in available_quizzes %}
+                <tr>
+                    <td>{{quiz.title}}</td>
+                    <td>{{quiz.start_time}}</td>
+                    <td>{{quiz.end_time}}</td>
+                    <td><a href="{% url "announcements" quiz.id %}">Announcements</a></td>
+                    <td class="actions">
+                        <a href="{% url "attemptquiz" quiz.id %}">Attempt</a> /  
+                        <a href="{% url "marks" quiz.id %}">See Marks</a>
+                    </td>
+                    <td><a href="{% url "discussion" quiz.id%}">Discussion</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <h3 class='text-center text-primary'>No Available Quiz Yet</h3>
+{% endif %}
+
+<h3>Attempted Quizzes</h3>
+{% if attempted_quizzes %}
+    <table>
+        <thead>
+            <tr>
+                <th>Quiz Title</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Announcement</th>
+                <th class="actions">Actions</th>
+                <th>Discussion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in attempted_quizzes %}
+                <tr>
+                    <td>{{quiz.title}}</td>
+                    <td>{{quiz.start_time}}</td>
+                    <td>{{quiz.end_time}}</td>
+                    <td><a href="{% url "announcements" quiz.id %}">Announcements</a></td>
+                    <td class="actions">
+                        <a href="{% url "marks" quiz.id %}">See Marks</a>
+                    </td>
+                    <td><a href="{% url "discussion" quiz.id%}">Discussion</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+    <h3 class='text-center text-primary'>No Quiz Yet</h3>
+{% endif %}
+
+
+<h3>Future Quizzes</h3>
+{% if quiz_to_be_started_yet %}
+    <table>
+        <thead>
+            <tr>
+                <th>Quiz Title</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Announcement</th>
+                <th>Discussion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in quiz_to_be_started_yet %}
+                <tr>
+                    <td>{{quiz.title}}</td>
+                    <td>{{quiz.start_time}}</td>
+                    <td>{{quiz.end_time}}</td>
+                    <td><a href="{% url "announcements" quiz.id %}">Announcements</a></td>
+                    <td><a href="{% url "discussion" quiz.id%}">Discussion</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+    <h3 class='text-center text-primary'>No Quiz to be started later</h3>
+{% endif %}
+</body>
+</html>
+
+{% endblock content %}

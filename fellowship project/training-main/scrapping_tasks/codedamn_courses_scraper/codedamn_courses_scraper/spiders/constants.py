@@ -1,0 +1,17 @@
+BASE_URL = 'https://codedamn.com'
+BUTTON_ID = '#layout-content-container > main > div > div > div.mt-8.sm\:mx-auto.sm\:w-full.sm\:max-w-md > div > form > div:nth-child(4) > button'
+COURSES_SECTION_ID = 'headlessui-disclosure-button-:r'
+COURSE_LINK = 'https://codedamn.com/learn/html-css'
+EMAIL_ID = 'email'
+EMPTY_STRING = ''
+HEIGHT = 800
+LOGIN_PAGE_URL = 'https://codedamn.com/login'
+NEW_TAB = 1
+NEW_TAB_QUERY = "window.open('');"
+PAGE_LINK_HREF = 'div.flex.justify-between.gap-4.py-2.text-sm div a::attr(href)'
+PASSWORD_ID = 'password'
+PREVIOUS_TAB = 0
+TITLES_CSS_SELECTOR = 'span.flex.items-center.space-x-2 span::text'
+UTF = 'utf-8'
+VIDEO_SOURCE_SELECTOR = 'video#main-video-element source::attr(src)'
+WIDTH = 1200

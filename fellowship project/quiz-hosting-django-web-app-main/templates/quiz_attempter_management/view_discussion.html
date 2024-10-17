@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Show Discussion</title>
+{% endblock title %}
+
+{% block nav_elements %}
+    {% if is_quiz_attempter %}
+        <a href="{% url "discussion" quiz_id %}" class="nav-link">Discussion Details</a>
+    {% else %}
+        <a href="{% url "draftquizzes" %}">Draft Quizzes</a>
+    {% endif %}
+    <a href="{% url "profile" %}" class="nav-link">Profile</a>
+{% endblock nav_elements %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                {% if discussions %}
+                    <h2 class="mb-4">Discussions</h2>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Discussion Subject</th>
+                                <th>Discussion Details</th>
+                                <th>Discussion Owner</th>
+                                <th>See Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for discussion in discussions %}
+                                <tr>
+                                    <td>{{ discussion.subject }}</td>
+                                    <td>{{ discussion.details }}</td>
+                                    <td>{{ discussion.quiz_attempter.username }}</td>
+                                    <td>
+                                        <a href="{% url "fulldiscussion" discussion.id %}" class="btn btn-primary">Click Here</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h3 class='text-center'>No discussions have been initiated yet</h3>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock content %}
